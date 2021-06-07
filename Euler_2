@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+long long int f(long long int *A)
+{
+    long long int i;
+    long long int total=2;
+    for(i=2;i>0;i++)
+    {
+        A[i]=A[i-2]+A[i-1];
+        if(A[i] % 2 == 0)
+        {
+            total =total+A[i];
+            
+        }
+        if(A[i]>4000000)
+        {
+            A[i]=0;
+            printf("%lld\n",total);
+            return i;
+        }
+    }
+}
+
+int main()
+{
+    long long int A[]={1,2};
+    long long int k;
+    k=f(A);
+}
