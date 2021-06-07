@@ -1,0 +1,32 @@
+#include<stdio.h>
+int sq(int n)
+{
+    int z=0;
+    for (int i=1;i<(n+1);i++)
+    {
+        z=z+i*i;
+    }
+    return z;
+}
+
+int sum(int m)
+{
+    int x=0;
+    for (int i=1;i<(m+1);i++)
+    {
+        x=x+i;
+    }
+    int s ;
+    s =x*x;
+    return s;
+}
+
+int main()
+{
+    int q=100,s,p;
+    s=sum(q);
+    p=sq(q);
+    int dif;
+    dif = p-s;
+    printf("%d",dif);
+}
