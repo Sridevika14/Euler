@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+int prime(long long int n)
+{
+    int tot=0;
+    for (long long int j =1;j<n;j++)
+    {
+        if(n%j == 0)
+        {
+            tot++;
+        }
+    }
+    if(tot == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    long long int r,sum;
+    scanf("%lld",&r);
+    sum=1;
+    for(int i=1;i<(r+1);i++)
+    {
+        if( r%i == 0)
+        {
+            if(prime(i) == 1)
+            {
+               sum = i; 
+            }
+        r=r/i;
+        }
+    }
+
+    printf("%lld", sum);
+
+    return 0;
+}
