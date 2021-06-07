@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main()
+{
+    int r,sum=0;
+    scanf("%d", &r);
+    for(int i =1;i<r;i++)
+    {
+        if(i%3 == 0)
+        {
+            sum =sum+i;
+        }
+        else if(i%5 == 0)
+        {
+            sum = sum +i;
+        }
+    }
+    printf("%d",sum);
+
+    return 0;
+}
