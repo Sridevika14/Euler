@@ -1,0 +1,39 @@
+#include<stdio.h>
+
+int checkpalindrome(int n)
+{
+int m,q=0;
+for(m=n;m>0;)
+{
+q=q*10+m%10;  m=m/10;  }
+
+if(q == n)
+{
+return 1;}
+else
+return 0;
+}
+
+int trial()
+{
+int t=0,max=0;
+for(int i=999;i>0;i--)
+{
+for(int j=999;j>0;j--)
+{
+int d=i*j;
+t=checkpalindrome(d);
+if(t==1){
+if(d > max)
+{
+max=d;
+}}}}
+printf("%d",max);
+return max;
+}
+int main()
+{
+int n=999,m;
+m=trial();
+return 0;
+}
