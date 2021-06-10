@@ -1,0 +1,39 @@
+#include<stdio.h>
+
+int check(int a, int b, int c)
+{
+	int l = a+b+c;
+	if(l==1000)
+		return 1;
+	return 0;
+}
+
+int triplet()
+{
+int l=-1;
+for(int i=1;i<1000;i++)
+{
+for(int j=1;j<i;j++)
+{
+for(int k=1;k<j;k++)
+{
+int a=k*k;
+int b=j*j;
+int c=i*i;
+int sum=a+b;
+if(sum == c)
+{
+int l=check(i,j,k);
+if(l==1)
+{
+return (i*j*k);
+}
+}}}}
+return 0;}
+
+int main()
+{
+int q;
+q=triplet();
+printf("%d\n",q);
+}
