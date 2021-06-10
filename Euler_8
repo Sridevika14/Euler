@@ -1,0 +1,36 @@
+#include <stdio.h> 
+#define MAX 1000 
+
+void check(int *A)
+{
+    long long int max=0;
+    for(int i=0;i<988;i++)
+    {
+    	long long int pro=1;
+        for(int j=i;j<(i+13);j++)
+        {
+        pro =pro*A[j];
+        }
+        if(pro>max)
+        {
+            max=pro;
+        }
+    }
+    printf("%lld",max);
+    return ;
+}
+int main(void) { 
+	int i=0;
+	long long int t=0; 
+	char string[MAX]; 
+	scanf("%s",&string); 
+	 
+	int a[MAX]; 
+	while(string[i]){ 
+			a[i] = (int)string[i]-48; 
+			//printf("%d",a[i]); 
+			i++; 
+	} 
+    check(a);
+	return 0; 
+} 
