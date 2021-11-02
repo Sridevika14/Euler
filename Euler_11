@@ -1,0 +1,81 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int arr[20][20];
+    for(int i=0;i<20;i++)
+    {
+        for(int j=0;j<20;j++)
+        {
+            int k;
+            scanf("%d", &k);
+            arr[i][j]=k;
+        }
+    }
+
+    printf("cbakjEFNCnskcndknc,,zxmc, x,cxkcj\n");
+
+    /*for(int i=0;i<20;i++)
+    {
+        for(int j=0;j<20;j++)
+        {
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }*/
+
+    int sum=13;
+
+    //in a row wise multiplication
+
+    for(int i=0;i<20;i++)
+    {
+        for(int j=0;j<17;j++)
+        {
+            int m=1;
+            for(int k=j;k<j+4;k++)
+            {
+                m=m*arr[i][k];
+            }
+            if(m>sum) sum=m;
+        }
+    }
+
+    //column wise multiplication
+
+    for(int i=0;i<20;i++)
+    {
+        for(int j=0;j<17;j++)
+        {
+            int m=1;
+            for(int k=j;k<j+4;k++)
+            {
+                m=m*arr[k][i];
+            }
+            if(m>sum) sum=m;
+        }
+    }
+
+    //diagonal multiplication
+
+    for(int i=0;i<17;i++)
+    {
+        for(int j=0;j<17;j++)
+        {
+            int m=arr[i][j]*arr[i+1][j+1]*arr[i+3][j+3]*arr[i+2][j+2];
+            if(m>sum) sum=m;
+        }
+    }
+
+    for(int i=0;i<17;i++)
+    {
+        for(int j=3;j<20;j++)
+        {
+            int m=arr[i][j]*arr[i+1][j-1]*arr[i+2][j-2]*arr[i+3][j-3];
+            if(m>sum) sum=m;
+        }
+    }
+
+    printf(" answer :- %d",sum);
+}
